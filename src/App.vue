@@ -1,8 +1,9 @@
 <template>
   <div id="app">
+    
     <Navbar />
-    <GMap />
     <router-view/>
+    
   </div>
 </template>
 
@@ -17,4 +18,5 @@ export default {
 </script>
 
 <style>
+
 </style>

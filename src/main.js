@@ -22,10 +22,18 @@ firebase.initializeApp({
 
 export const db = firebase.firestore();
 
-/* eslint-disable no-new */
-new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+let app = null;
+
+
+firebase.auth().onAuthStateChanged(() => {
+
+  if(!app){
+    new Vue({
+      el: '#app',
+      router,
+      components: { App },
+      template: '<App/>'
+    })
+  }
 })
+/* eslint-disable no-new */
